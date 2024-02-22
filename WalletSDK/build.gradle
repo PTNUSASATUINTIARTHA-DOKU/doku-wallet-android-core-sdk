@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+    id 'maven-publish'
+    id 'kotlin-android-extensions'
+}
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    namespace 'com.dokuwallet.walletsdk'
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 31
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.dokuwallet.sdk'
+            artifactId = 'wallet'
+            version = project.property('nexusLibraryVersion')
+
+            artifact("$buildDir/outputs/aar/WalletSDK-release.aar")
+
+            repositories {
+                maven {
+                    url(project.property('nexusBaseUrl') + project.property('nexusBaseRepo'))
+                    allowInsecureProtocol = true
+                    credentials {
+                        username = project.property('nexusUsername')
+                        password = project.property('nexusPassword')
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':CoreSDK')
+}

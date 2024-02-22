@@ -1,0 +1,33 @@
+plugins {
+    id 'maven-publish'
+    id 'version-catalog'
+}
+
+catalog {
+    versionCatalog {
+        from(files("./libs.versions.toml"))
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.dokuwallet.sdk'
+            artifactId = 'dependencies-catalog'
+            version = project.property('nexusLibraryVersion')
+
+            from(components["versionCatalog"])
+
+            repositories {
+                maven {
+                    url(project.property('nexusBaseUrl') + project.property('nexusBaseRepo'))
+                    allowInsecureProtocol = true
+                    credentials {
+                        username = project.property('nexusUsername')
+                        password = project.property('nexusPassword')
+                    }
+                }
+            }
+        }
+    }
+}

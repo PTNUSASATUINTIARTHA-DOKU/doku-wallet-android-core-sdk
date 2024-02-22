@@ -1,0 +1,36 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.dokuwallet.sdk",
+    "module": "dependencies-catalog",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "versionCatalogElements",
+      "attributes": {
+        "org.gradle.category": "platform",
+        "org.gradle.usage": "version-catalog"
+      },
+      "files": [
+        {
+          "name": "dependencies-catalog-1.0.0.toml",
+          "url": "dependencies-catalog-1.0.0.toml",
+          "size": 678,
+          "sha512": "2b288d113816e1cf97d522cda0bc533f1c4b9db61aa63f9ef848d8ff0a5435006b517e0f0fc1473428eb8575d9ad340c134e282a768b6f5ebf1f059fac5b8ad9",
+          "sha256": "9fae294c23dcbaf29f04925d7793266110c2262869313156e649df0877e90fb0",
+          "sha1": "bda29ecec9e01514b48c76c9e9bbb41831a1fce8",
+          "md5": "2dd34d53a45045fc59540ecc82e931c3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/gray_neutral_background"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ic_shield"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_solid_shield"
+            app:layout_constraintBottom_toBottomOf="@id/txt_shield_caption"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_shield_caption" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_shield_caption"
+            style="@style/Theme.DokuSDK.FooterCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/footer_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ic_shield"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_bi_caption"
+            style="@style/Theme.DokuSDK.FooterCaption"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/proses_ini_diawasi_oleh"
+            app:layout_constraintBottom_toBottomOf="@id/img_logo_bi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_logo_bi" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_logo_bi"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/logo_bank_indonesia"
+            app:layout_constraintStart_toEndOf="@id/txt_bi_caption"
+            app:layout_constraintTop_toBottomOf="@id/txt_shield_caption"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

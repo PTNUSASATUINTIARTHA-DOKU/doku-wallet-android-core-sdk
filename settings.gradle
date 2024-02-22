@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "DokuSDKConsumer"
+include ':app'
+include ':VerificationPageSDK'
+include ':CoreSDK'
+include ':WalletSDK'
+include ':DokuSDK'
+include ':DependenciesCatalog'

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/ktpFragment">
+
+    <fragment
+        android:id="@+id/ktpFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.ktp.KtpFragment"
+        android:label="fragment_ktp"
+        tools:layout="@layout/vp_sdk_fragment_ktp">
+        <action
+            android:id="@+id/action_ktpFragment_to_camKtpFragment"
+            app:destination="@id/camKtpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/camKtpFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.ktp.CamKtpFragment"
+        android:label="fragment_cam_ktp"
+        tools:layout="@layout/vp_sdk_fragment_cam_ktp">
+        <action
+            android:id="@+id/action_camKtpFragment_to_verifKtpFragment"
+            app:destination="@id/verifKtpFragment" />
+        <argument
+            android:name="is_retake"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifKtpFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.ktp.VerifKtpFragment"
+        android:label="VerifKtpFragment">
+        <action
+            android:id="@+id/action_verifKtpFragment_to_selfieFragment"
+            app:destination="@id/selfieFragment" />
+        <action
+            android:id="@+id/action_verifKtpFragment_to_identityFragment"
+            app:destination="@id/identityFragment" />
+        <argument
+            android:name="is_retake"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/selfieFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.selfie.SelfieFragment"
+        android:label="SelfieFragment">
+        <action
+            android:id="@+id/action_selfieFragment_to_camSelfieFragment"
+            app:destination="@id/camSelfieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/camSelfieFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.selfie.CamSelfieFragment"
+        android:label="fragment_cam_selfie"
+        tools:layout="@layout/vp_sdk_fragment_cam_selfie">
+        <action
+            android:id="@+id/action_camSelfieFragment_to_verifSelfieFragment"
+            app:destination="@id/verifSelfieFragment" />
+        <argument
+            android:name="is_retake"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifSelfieFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.selfie.VerifSelfieFragment"
+        android:label="VerifSelfieFragment">
+        <action
+            android:id="@+id/action_verifSelfieFragment_to_identityFragment"
+            app:destination="@id/identityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/identityFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.identity.IdentityFragment"
+        android:label="fragment_identity"
+        tools:layout="@layout/vp_sdk_fragment_identity">
+        <action
+            android:id="@+id/action_identityFragment_to_guideLivenessFragment"
+            app:destination="@id/guideLivenessFragment" />
+        <action
+            android:id="@+id/action_identityFragment_to_camKtpFragment"
+            app:destination="@id/camKtpFragment" />
+        <action
+            android:id="@+id/action_identityFragment_to_camSelfieFragment"
+            app:destination="@id/camSelfieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideLivenessFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.liveness.GuideLivenessFragment"
+        android:label="fragment_guide_liveness"
+        tools:layout="@layout/vp_sdk_fragment_guide_liveness">
+        <action
+            android:id="@+id/action_guideLivenessFragment_to_livenessFragment"
+            app:destination="@id/livenessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/livenessFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.liveness.LivenessFragment"
+        android:label="fragment_liveness"
+        tools:layout="@layout/vp_sdk_fragment_liveness">
+        <action
+            android:id="@+id/action_livenessFragment_to_livenessFinishFragment"
+            app:destination="@id/livenessFinishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/livenessFinishFragment"
+        android:name="com.dokuwallet.verificationpagesdk.ui.liveness.LivenessFinishFragment"
+        android:label="LivenessFinishFragment">
+        <argument
+            android:name="isSuccess"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="errorCode"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="-" />
+        <argument
+            android:name="isUpdated"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+</navigation>

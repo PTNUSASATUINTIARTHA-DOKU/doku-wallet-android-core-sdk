@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="general_alert_title">Pemberitahuan</string>
+    <string name="general_alert_caption">Terjadi kesalahan pada sistem</string>
+    <string name="ok_title">OK</string>
+    <string name="nanti_saja">Nanti Saja</string>
+    <string name="transfer_p2p">Transfer P2P</string>
+    <string name="transfer_bank">Transfer Bank</string>
+    <string name="generate_qris">Generate QRIS</string>
+    <string name="status_qris_success_title">Pembayaran QRIS Sukses!</string>
+    <string name="status_qris_success_desc">Pembayaran QRIS berhasil dilakukan</string>
+    <string name="status_qris_expired_title">Pembayaran QRIS Expired!</string>
+    <string name="status_qris_expired_desc">Pembayaran QRIS telah expired</string>
+</resources>

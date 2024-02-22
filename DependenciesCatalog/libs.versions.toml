@@ -1,0 +1,15 @@
+[versions]
+# Define the dependency versions
+library_version = "1.0.0"
+
+[libraries]
+# Define the libraries
+doku = { module = "com.dokuwallet.sdk:doku", version.ref = "library_version" }
+vp = { module = "com.dokuwallet.sdk:vp", version.ref = "library_version" }
+wallet = { module = "com.dokuwallet.sdk:wallet", version.ref = "library_version" }
+core-debug = { module = "com.dokuwallet.sdk:core-debug", version.ref = "library_version" }
+core-release = { module = "com.dokuwallet.sdk:core-release", version.ref = "library_version" }
+
+[bundles]
+# Define bundles/groups of libraries
+main = ["doku", "vp", "wallet"]

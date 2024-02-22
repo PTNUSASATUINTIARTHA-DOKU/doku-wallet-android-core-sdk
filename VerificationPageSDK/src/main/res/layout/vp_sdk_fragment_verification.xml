@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_verif"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/footer_information"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/footer_information"
+        layout="@layout/vp_sdk_footer_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_retake" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_retake"
+        style="@style/Theme.DokuSDK.FooterOutlineButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/ulangi"
+        app:icon="@drawable/ic_custom_restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_save"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        style="@style/Theme.DokuSDK.FooterButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/simpan"
+        app:icon="@drawable/ic_custom_rounded_true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_retake"
+        app:layout_constraintTop_toTopOf="@id/btn_retake" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

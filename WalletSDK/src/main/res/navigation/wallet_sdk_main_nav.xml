@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wallet_sdk_main_nav"
+    app:startDestination="@id/webViewFragment">
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.dokuwallet.walletsdk.viewmodel.webview.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/generateQrisFragment"
+        android:name="com.dokuwallet.walletsdk.viewmodel.qris.GenerateQrisFragment"
+        android:label="fragment_generate_qris"
+        tools:layout="@layout/fragment_generate_qris">
+        <action
+            android:id="@+id/action_generateQrisFragment_to_statusQrisFragment"
+            app:destination="@id/statusQrisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statusQrisFragment"
+        android:name="com.dokuwallet.walletsdk.viewmodel.qris.StatusQrisFragment"
+        android:label="fragment_status_qris"
+        tools:layout="@layout/fragment_status_qris">
+        <argument
+            android:name="isSuccess"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+</navigation>
